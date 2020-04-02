@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Trip Helper - Your help on the trips</title>
+    <link rel="shortcut icon" href="https://pics.tinypic.pl/i/01001/h7j9shh79xkc.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <img src="https://pics.tinypic.pl/i/01001/h7j9shh79xkc.png" width="36px">
+    <span style="vertical-align: top">TripHelper</span>
+</header>
+
+<!-- First (left) container service -->
+<div class="service-container">
+    <form method="post">
+        <div class="service-label">
+            TYPE <br>
+            <input checked type="radio" id="gas_station" name="type" value="gas_station">
+            <label for="gas_station">Gas station</label><br>
+            <input type="radio" id="restaurant" name="type" value="restaurant">
+            <label for="restaurant">Restaurant</label><br>
+            <input type="radio" id="taxi_stand" name="type" value="taxi_stand">
+            <label for="taxi_stand">Taxi stand</label><br>
+            <input type="radio" id="travel_agency" name="type" value="travel_agency">
+            <label for="travel_agency">Travel agency</label><br>
+            <input type="radio" id="train_station" name="type" value="train_station">
+            <label for="train_station">Train station</label><br>
+            <input type="radio" id="pharmacy" name="type" value="pharmacy">
+            <label for="pharmacy">Pharmacy</label><br>
+            <input type="radio" id="parking" name="type" value="parking">
+            <label for="parking">Parking</label><br>
+        </div>
+        <div class="service-label">
+            LOCATION <br>
+            <input class="input-text" type="text" name="locationName" placeholder="Warsaw">
+        </div>
+        <div class="service-label">
+            RADIUS <br>
+            <select class="select-radius" name="radius">
+                <option value="5000">0 km</option>
+                <option value="7000">2 km</option>
+                <option value="12000">5 km</option>
+                <option value="17000">10 km</option>
+                <option value="23000">15 km</option>
+                <option value="45000">30 km</option>
+            </select>
+        </div>
+        <div style="text-align:center;">
+            <input type="submit" value="FIND" class="submit-form-button">
+        </div>
+    </form>
+</div>
+
+<!-- Main (right) container -->
+<div class="main-container">
+    <div>
+        <div class="result-box" th:object="${result}" th:each="result : ${resultList}">
+            <img th:src="*{getIcon()}" style="width: 50px; float: left;">
+            <span th:text="*{getName()}" style="float: right; font-weight: bold;" th:maxlength="43"></span><br>
+            <span th:text="*{getVicinity()}" class="spanText"></span><br>
+            <span th:text="'Rating: '+*{getRating()}" class="spanText"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
