@@ -32,6 +32,8 @@ App maps all result from Nearby Search Google Api to ResultDTO.
 Are you entry params, click FIND and TripHelper shows "No result"? Yes, this situation occurs because free
 Google Api have connect limit per 100 seconds. Please, be patient.
 
+App is deploy on heroku.com: https://triphelperapi.herokuapp.com/api
+
 ## 3. Technologies
 Project is created with:
 * Java version: 1.8
