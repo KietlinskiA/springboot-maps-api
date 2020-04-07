@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.kietlinski.springbootmapsapi.model.CityLattLong;
-import pl.kietlinski.springbootmapsapi.model.cityLattLong.Candidate;
 import pl.kietlinski.springbootmapsapi.model.cityLattLong.Location;
 
 import java.net.URI;

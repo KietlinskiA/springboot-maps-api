@@ -37,9 +37,6 @@ public class LocationService {
     }
 
     public List<ResultDTO> getApiResults(String locationName, String radius, String type) throws URISyntaxException {
-//        if(String.valueOf(radius).equals()){
-//            return
-//        }
         ResponseEntity<Location> exchange = new RestTemplate().exchange(
                 getApiUri(locationName, radius, type),
                 HttpMethod.POST,
