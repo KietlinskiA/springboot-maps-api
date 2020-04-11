@@ -43,7 +43,6 @@ public class LocationService {
                 HttpEntity.EMPTY,
                 Location.class
         );
-
         List<Result> resultList = exchange.getBody().getResults();
         if(resultDTOList.size() != 0) {
             resultDTOList.clear();
@@ -60,7 +59,7 @@ public class LocationService {
         return resultDTOList;
     }
 
-    private URI getApiUri(String locationName, String radius, String type) throws URISyntaxException {
+    public URI getApiUri(String locationName, String radius, String type) throws URISyntaxException {
         URIBuilder uriBuilder = new URIBuilder(LOCATION_BASE_URL);
         uriBuilder.addParameter("location", locationName);
         uriBuilder.addParameter("radius", radius);
